@@ -1,0 +1,23 @@
+{
+    "name": "rphaven/uid",
+    "description": "Library of common functionality surrounding UIDs (in the form of UUIDs and ULIDs)",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "RpHaven\\Uid\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Barney Hanlon",
+            "email": "barney@shrikeh.net"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "symfony/uid": "^7.0",
+        "nyholm/psr7": "^1.8",
+        "php-ds/php-ds": "^1.5"
+    }
+}
