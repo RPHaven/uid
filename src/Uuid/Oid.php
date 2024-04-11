@@ -23,6 +23,9 @@ enum Oid: string
 
     case TABLE = 'table';
 
+
+    case TOKEN = 'token';
+
     public function namespace(): Uuid
     {
         if (!$namespace = Store::get($this)) {

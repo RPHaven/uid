@@ -2,27 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Infra\Uid;
+namespace RpHaven\Uid\Uuid\Id;
 
 use DateTimeImmutable;
-use Infra\Uid\Traits\BinaryUid;
-use Infra\Uid\Traits\Rfc4122Uid;
-use Psr\Http\Message\UriInterface;
-use RpHaven\Games\Game\GameId;
-use RpHaven\Games\Meet\MeetId;
-use RpHaven\Games\Session\SessionId;
-use RpHaven\Games\Traits\ToString;
-use Symfony\Component\Uid\AbstractUid;
+use RpHaven\Uid\Id\GameId;
+use RpHaven\Uid\Id\MeetId;
+use RpHaven\Uid\Id\SessionId;
+use RpHaven\Uid\Traits\ToString;
+use RpHaven\Uid\Uuid\Traits\BinaryUuid;
+use RpHaven\Uid\Uuid\Traits\Rfc4122Uuid;
 use Symfony\Component\Uid\Uuid;
 use Symfony\Component\Uid\UuidV6;
 
-final readonly class SessionUid implements SessionId
+final readonly class SessionUuid implements SessionId
 {
-    use BinaryUid;
-    use Rfc4122Uid;
+    use BinaryUuid;
+    use Rfc4122Uuid;
     use ToString;
-
-    public const OID = Oid::SESSION;
 
     public static function create(GameId $gameId, MeetId $meetId, DateTimeImmutable $start): self
     {
@@ -43,7 +39,7 @@ final readonly class SessionUid implements SessionId
     {
     }
 
-    private function uid(): AbstractUid
+    private function uid(): UuidV6
     {
         return $this->sessionId;
     }

@@ -9,4 +9,5 @@ use RpHaven\Uid\Uid;
 interface UidFactory
 {
     public function binary(string $bytes): Uid;
+
 }
