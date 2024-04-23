@@ -23,8 +23,9 @@ enum Oid: string
 
     case TABLE = 'table';
 
-
     case TOKEN = 'token';
+
+    case WALLET = 'wallet';
 
     public function namespace(): Uuid
     {
