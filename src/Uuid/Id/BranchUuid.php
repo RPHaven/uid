@@ -10,15 +10,17 @@ use RpHaven\Uid\Traits\ToString;
 use RpHaven\Uid\Uuid\Oid;
 use RpHaven\Uid\Uuid\Traits\BinaryUuid;
 use RpHaven\Uid\Uuid\Traits\Rfc4122Uuid;
+use RpHaven\Uid\Uuid\Traits\UuidV5Type;
 use Symfony\Component\Uid\UuidV5;
 
 final readonly class BranchUuid implements BranchId
 {
     use BinaryUuid;
     use Rfc4122Uuid;
+    use UuidV5Type;
     use ToString;
 
-    public const OID = Oid::BRANCH;
+    public const Oid OID = Oid::BRANCH;
 
     public static function create(UriInterface $uri): self
     {

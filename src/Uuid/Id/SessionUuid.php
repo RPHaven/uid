@@ -11,6 +11,7 @@ use RpHaven\Uid\Id\SessionId;
 use RpHaven\Uid\Traits\ToString;
 use RpHaven\Uid\Uuid\Traits\BinaryUuid;
 use RpHaven\Uid\Uuid\Traits\Rfc4122Uuid;
+use RpHaven\Uid\Uuid\Traits\UuidV6Type;
 use Symfony\Component\Uid\Uuid;
 use Symfony\Component\Uid\UuidV6;
 
@@ -18,6 +19,7 @@ final readonly class SessionUuid implements SessionId
 {
     use BinaryUuid;
     use Rfc4122Uuid;
+    use UuidV6Type;
     use ToString;
 
     public static function create(GameId $gameId, MeetId $meetId, DateTimeImmutable $start): self

@@ -4,21 +4,25 @@ declare(strict_types=1);
 
 namespace Infra\Uid;
 
-use Infra\Uid\Traits\BinaryUid;
-use Infra\Uid\Traits\Rfc4122Uid;
-use RpHaven\Games\Branch\Space\SpaceId;
-use RpHaven\Games\Traits\ToString;
-use Symfony\Component\Uid\UuidV5;
+
+use Psr\Http\Message\UriInterface;
+use RpHaven\Uid\Id\SpaceId;
+use RpHaven\Uid\Traits\ToString;
+use RpHaven\Uid\Uuid\Oid;
+use RpHaven\Uid\Uuid\Traits\BinaryUuid;
+use RpHaven\Uid\Uuid\Traits\Rfc4122Uuid;
+use RpHaven\Uid\Uuid\Traits\UuidV6Type;
 
 final readonly class SpaceUid implements SpaceId
 {
-    use BinaryUid;
-    use Rfc4122Uid;
+    use BinaryUuid;
+    use Rfc4122Uuid;
+    use UuidV6Type;
     use ToString;
 
     public const OID = Oid::SPACE;
 
-    public static function create(\RpHaven\Games\Branch\Space $space): self
+    public static function create(UriInterface $space): self
     {
         return new self(UuidV5::v5(
             self::OID->namespace(),

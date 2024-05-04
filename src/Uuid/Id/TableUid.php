@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace Infra\Uid;
 
-use Infra\Uid\Traits\BinaryUid;
-use Infra\Uid\Traits\Rfc4122Uid;
+
 use Nyholm\Psr7\Uri;
-use RpHaven\Games\Branch\Space\SpaceId;
-use RpHaven\Games\Table\TableId;
-use RpHaven\Games\Traits\ToString;
-use Symfony\Component\Uid\Uuid;
-use Symfony\Component\Uid\UuidV5;
+use RpHaven\Uid\Id\SpaceId;
+use RpHaven\Uid\Traits\ToString;
+use RpHaven\Uid\Uuid\Traits\BinaryUuid;
+use RpHaven\Uid\Uuid\Traits\Rfc4122Uuid;
+use RpHaven\Uid\Uuid\Traits\UuidV6Type;
 
 final readonly class TableUid implements TableId
 {
-    use BinaryUid;
-    use Rfc4122Uid;
+    use BinaryUuid;
+    use Rfc4122Uuid;
+    use UuidV6Type;
     use ToString;
 
     public const OID = Oid::TABLE;
@@ -38,12 +38,4 @@ final readonly class TableUid implements TableId
         return new Uri(self::OID);
     }
 
-    private function __construct(private UuidV5 $uid)
-    {
-    }
-
-    private function uid(): UuidV5
-    {
-        return $this->uid;
-    }
 }

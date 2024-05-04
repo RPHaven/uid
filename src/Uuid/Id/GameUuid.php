@@ -8,9 +8,11 @@ use DateTimeImmutable;
 use RpHaven\Uid\Id\BranchId;
 use RpHaven\Uid\Id\GameId;
 use RpHaven\Uid\Traits\ToString;
+use RpHaven\Uid\Uid\Type;
 use RpHaven\Uid\Uuid\Oid;
 use RpHaven\Uid\Uuid\Traits\BinaryUuid;
 use RpHaven\Uid\Uuid\Traits\Rfc4122Uuid;
+use RpHaven\Uid\Uuid\Traits\UuidV5Type;
 use Symfony\Component\Uid\UuidV5;
 use Symfony\Component\Uid\UuidV6;
 
@@ -18,9 +20,10 @@ final readonly class GameUuid implements GameId
 {
     use BinaryUuid;
     use Rfc4122Uuid;
+    use UuidV5Type;
     use ToString;
 
-    public const OID = Oid::GAME;
+    public const Oid OID = Oid::GAME;
 
     public static function create(BranchId $branchId, string $gameName, string $system): self
     {

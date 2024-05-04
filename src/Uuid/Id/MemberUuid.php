@@ -11,15 +11,17 @@ use RpHaven\Uid\Uuid\Id\Exception\NodeMismatch;
 use RpHaven\Uid\Uuid\Oid;
 use RpHaven\Uid\Uuid\Traits\BinaryUuid;
 use RpHaven\Uid\Uuid\Traits\Rfc4122Uuid;
+use RpHaven\Uid\Uuid\Traits\UuidV6Type;
 use Symfony\Component\Uid\UuidV6;
 
 final readonly class MemberUuid implements MemberId
 {
     use BinaryUuid;
     use Rfc4122Uuid;
+    use UuidV6Type;
     use ToString;
 
-    public const OID = Oid::MEMBER;
+    public const Oid OID = Oid::MEMBER;
 
     public static function create(DateTimeInterface $registration): self
     {
