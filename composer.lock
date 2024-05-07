@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RPHaven/common-app.git",
-                "reference": "9d0f64db204c939f47d41af25fd26384718bd88b"
+                "reference": "ffd766bcdf9e3883cd182acd52d9335629a114c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RPHaven/common-app/zipball/9d0f64db204c939f47d41af25fd26384718bd88b",
-                "reference": "9d0f64db204c939f47d41af25fd26384718bd88b",
+                "url": "https://api.github.com/repos/RPHaven/common-app/zipball/ffd766bcdf9e3883cd182acd52d9335629a114c0",
+                "reference": "ffd766bcdf9e3883cd182acd52d9335629a114c0",
                 "shasum": ""
             },
             "require": {
@@ -68,7 +68,7 @@
                 "source": "https://github.com/RPHaven/common-app/tree/main",
                 "issues": "https://github.com/RPHaven/common-app/issues"
             },
-            "time": "2024-05-03T13:19:54+00:00"
+            "time": "2024-05-07T10:43:30+00:00"
         }
     ],
     "packages-dev": [],
