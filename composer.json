@@ -14,10 +14,14 @@
             "email": "barney@shrikeh.net"
         }
     ],
-    "minimum-stability": "stable",
     "require": {
-        "symfony/uid": "^7.0",
-        "nyholm/psr7": "^1.8",
-        "php-ds/php-ds": "^1.5"
-    }
+        "rphaven/common-app": "dev-main"
+    },
+    "minimum-stability": "stable",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/rphaven/common-app"
+        }
+        ]
 }
