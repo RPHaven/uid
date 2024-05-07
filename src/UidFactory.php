@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-namespace RpHaven\Uid\Factory;
-
-use RpHaven\Uid\Uid;
+namespace RpHaven\Uid;
 
 interface UidFactory
 {
